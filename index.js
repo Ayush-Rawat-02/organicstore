@@ -8,6 +8,8 @@ mongoDB();
 app.use(cors());
 app.use(express.json());
 
+const port = process.env.PORT;
+
 app.use("/api", require("./Routes/CreateUser"));
 // app.use('/api',require("./Routes/DisplayData"));
 app.use("/api", require("./Routes/Checkout"));
