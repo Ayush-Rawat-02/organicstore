@@ -19,8 +19,10 @@ router.post("/create-checkout-session", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
         line_items: lineItems,
         mode: "payment",
-        success_url: `${process.env.FRONTEND_URL}/success`,
-        cancel_url: `${process.env.FRONTEND_URL}/cancel`,
+        // success_url: `${process.env.FRONTEND_URL}/success`,
+        success_url: `${process.env.FRONTEND_URL}`,
+        // cancel_url: `${process.env.FRONTEND_URL}/cancel`,
+        cancel_url: `${process.env.FRONTEND_URL}`,
     });
 
     res.json({ id: session.id })
